@@ -1,0 +1,180 @@
+/* Common Css */
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(/img/Decore.png) !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+.poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+.poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    
+}
+.volkhov-bold {
+    font-family: "Volkhov", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @keyframes grow {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+  }
+  
+  .grow-animation {
+    transition: transform 0.5s linear;
+  }
+  
+  .grow-animation:hover {
+    animation: grow 0.5s forwards;
+  }
+
+/* NAv bar */
+.logo{
+    width: 114.91px;
+    height: 33.99px;
+    margin-right: 227px;
+
+}
+.nav-link{
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* banner */
+.bannerimg{
+    width: 765px;
+    height: 764px;
+}
+.tagline {
+    color: #F75C03;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+  
+  .headline {
+    font-size: 64px;
+    font-weight: 800;
+    color: #1D1E25;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  
+  .underline {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    height: 8px;
+    background-color: #ff5e00;
+    z-index: -1;
+    border-radius: 4px;
+    transform: rotate(-2deg);
+  }
+  
+  .description {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 30px;
+  }
+  
+  .buttons {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .btn {
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 12px 20px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  
+  .demo-btn {
+    background-color: transparent;
+    color: #080707;
+  }
+  
+  .play-icon {
+    width: 35px;
+    height: 35px;
+    background-color: #F75C03;
+    color: #791414;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+/* Services Section*/
+
+.row{
+    margin-top: 100px !important;
+}
+.card{
+    width: 140px;
+    border: #ffffff;
+    border-radius: 20% !important;
+}
+.card img{
+    position: relative !important;
+    left: 100px;
+    width: 70px;
+    height: 78px;
+}
+.h3{
+    font-size: 20px;
+    font-weight: 600;
+    color: #1D1E25;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+/* Destination Section */
+}
+.card-img-top1{
+    height: 400px !important;
+    width: 354px !important;
+    position: relative !important;
+    top: 20px;
+    left: -40px !important;
+}
+.card1{
+     width: 300px !important; 
+     height: 520px !important;
+     border-radius: 10% !important;
+      
+}
+.card-body1{
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
