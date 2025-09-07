@@ -3,186 +3,269 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>Jadoo Travel</title>
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Volkhov:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Common CSS */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-image: url(/img/Decore.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      font-family: 'Poppins', sans-serif;
+      color: #1D1E25;
+    }
+
+    .poppins-bold { font-weight: 700; }
+    .poppins-medium { font-weight: 500; }
+    .volkhov-bold { font-family: 'Volkhov', serif; font-weight: 700; }
+
+    .grow-animation { transition: transform 0.5s ease; }
+    .grow-animation:hover { transform: scale(1.05); }
+
+    /* Navbar */
+    .logo { width: 115px; height: 34px; }
+    .nav-link { color: black; font-size: 17px; font-weight: 600; }
+    .btn-warning { background-color: #F75C03; border: none; }
+
+    /* Banner */
+    .bannerimg { width: 100%; max-width: 700px; height: auto; }
+    .tagline { color: #F75C03; font-weight: 600; font-size: 20px; letter-spacing: 1px; margin-bottom: 10px; }
+    .headline { font-size: 2.5rem; font-weight: 800; color: #1D1E25; line-height: 1.2; margin-bottom: 20px; position: relative; }
+    .underline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 5px;
+      width: 100%;
+      height: 8px;
+      background-color: #ff5e00;
+      z-index: -1;
+      border-radius: 4px;
+      transform: rotate(-2deg);
+    }
+    .description { font-size: 14px; color: #777; margin-bottom: 30px; }
+    .buttons { justify-content: center; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .btn { border-radius: 8px; padding: 12px 20px; font-weight: 600; font-size: 14px; }
+    .demo-btn { background-color: transparent; color: #080707; border: 2px solid #F75C03; }
+    .play-icon {
+      width: 35px; height: 35px; background-color: #F75C03; color: #fff;
+      border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; font-size: 16px; margin-right: 10px;
+    }
+
+    /* Services Section */
+    .services-header { margin-top: 80px; }
+    .services-header h5 { color: #777; margin-bottom: 10px; }
+    .services-header h1 { font-size: 2rem; font-weight: 700; }
+    .card img { width: 70px; height: 78px; margin: 0 auto; }
+    .card { border-radius: 20px; }
+
+    /* Destinations */
+    .destinations-section { margin-top: 80px; }
+    .card1 { width: 100%; max-width: 300px; border-radius: 20px; overflow: hidden; margin-bottom: 30px; }
+    .card-img-top1 { width: 100%; height: auto; display: block; }
+    .card-body1 { display: flex; justify-content: space-between; padding: 10px 15px; font-weight: 600; }
+    .list-group-item { border: none; padding-left: 15px; font-size: 14px; }
+
+    /* Newsletter */
+    .newsletter { background-color: #f8f9fa; border-radius: 10px; padding: 40px 20px; margin-top: 80px; }
+    .newsletter h4 { font-weight: 700; margin-bottom: 20px; }
+
+    /* Footer */
+    footer { background-color: #fff; padding: 40px 0; margin-top: 80px; }
+    footer h5, footer h6 { font-weight: 700; margin-bottom: 15px; }
+    footer ul { padding-left: 0; list-style: none; }
+    footer ul li { margin-bottom: 8px; }
+    footer p { font-size: 14px; color: #777; }
+
+    @media (max-width: 768px) {
+      .headline { font-size: 2rem; }
+      .bannerimg { max-width: 100%; height: auto; margin-top: 20px; }
+      .card-body1 { flex-direction: column; gap: 5px; }
+      .buttons { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
 <body>
+
+<div class="container-xl">
+
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent py-3">
   <div class="container-xl">
-    <!-- Nav bar -->
-    <ul class="nav justify-content-end gap-5 mt-5">
-      <li class="nav-item ">
-        <img class="logo" src="img/Jadoo.png" alt="">
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Desitnations</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Hotels</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Flights</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Bookings</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
-      </li>
-      <li class="nav-item">
-        <button type="button" class="btn active" data-bs-toggle="button" aria-pressed="true">Sign up</button>
-      </li>
-    </ul>
-    <!-- banner -->
-    <div class="container text-center">
-      <div class="row align-items-center justify-content-center gap-4 mt-5">
-        <div class="col">
-          <p class="tagline poppins-bold ">BEST DESTINATIONS AROUND THE WORLD</p>
-          <h1 class="headline volkhov-bold">
-            Travel, <span class="underline">enjoy</span><br />
-            and live a new<br />
-            and full life
-          </h1>
-          <p class="description poppins-medium">
-            Built Wicket longer admire do barton vanity itself do in it.<br />
-            Preferred to sportsmen it engrossed listening. Park gate<br />
-            sell they west hard for the.
-          </p>
-          <div class="buttons">
-            <button type="button" class="btn btn-warning">Find out more</button>
-            <a href="#" class="btn demo-btn ">
-              <span class="play-icon ">▶</span>
-              Play Demo
-            </a>
-          </div>
+    <a class="navbar-brand" href="#">
+      <img src="/img/Jadoo.png" alt="Jadoo Logo" class="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#">Destinations</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Hotels</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Flights</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Bookings</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+        <li class="nav-item ms-lg-3">
+          <button type="button" class="btn btn-warning">Sign up</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Banner -->
+  <div class="row align-items-center justify-content-center mt-4">
+    <div class="col-md-6 text-center text-md-start">
+      <p class="tagline poppins-bold">BEST DESTINATIONS AROUND THE WORLD</p>
+      <h1 class="headline volkhov-bold">Travel, <span class="underline">enjoy</span><br>and live a new<br>and full life</h1>
+      <p class="description poppins-medium">
+        Built Wicket longer admire do barton vanity itself do in it.<br>
+        Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the.
+      </p>
+      <div class="buttons">
+        <button type="button" class="btn btn-warning">Find out more</button>
+        <a href="#" class="btn demo-btn"><span class="play-icon">▶</span>Play Demo</a>
+      </div>
+    </div>
+    <div class="col-md-6 text-center">
+      <img class="bannerimg" src="/img/Image.png" alt="">
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <div class="services-header text-center">
+    <h5 class="text-body-secondary">CATEGORY</h5>
+    <h1>We Offer Best Services</h1>
+  </div>
+  <div class="row justify-content-center mt-4 text-center g-4">
+    <div class="col-sm-6 col-md-3">
+      <div class="card shadow-sm p-3 rounded grow-animation">
+        <img src="/img/1.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="h5">Calculated Weather</p>
+          <p class="card-text">Built Wicket longer admire do barton vanity itself do in it.</p>
         </div>
-        <div class="col">
-          <img class="bannerimg" src="/img/Image.png" alt="">
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <div class="card shadow-sm p-3 rounded grow-animation">
+        <img src="/img/2.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="h5">Best Flights</p>
+          <p class="card-text">Engrossed listening. Park gate sell they west hard for the.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <div class="card shadow-sm p-3 rounded grow-animation">
+        <img src="/img/3.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="h5">Local Events</p>
+          <p class="card-text">Barton vanity itself do in it. Preferd to men it listening.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <div class="card shadow-sm p-3 rounded grow-animation">
+        <img src="/img/4.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="h5">Customization</p>
+          <p class="card-text">We deliver outsourced aviation services for military customers.</p>
+        </div>
       </div>
     </div>
   </div>
-  <div class="container-xl mt-5">
-    <div class="services-header mt-5 text-center">
-      <h5 class="text-body-secondary">CATEGORY</h5>
-      <h1>We Offer Best Services</h1>
-    </div>
-    <div class="row justify-content-center mt-5 text-center ">
-      <div class="col">
-        <div class="card shadow-sm p-3 mb-5 rounded grow-animation " style="width: 18rem;">
-          <img src="img/1.png" class="card-img-top " alt="...">
-          <div class="card-body">
-            <p class="h3">Calculated Weather </p>
-            <p class="card-text">Built Wicket longer admire do barton vanity itself do in it.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card shadow-sm p-3 mb-5 rounded grow-animation" style="width: 18rem;">
-          <img src="img/2.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="h3">Best Flights</p>
-            <p class="card-text">Engrossed listening. Park gate sell they west hard for the.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card shadow-sm p-3 mb-5 rounded grow-animation" style="width: 18rem;">
-          <img src="img/3.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="h3">Local Events</p>
-            <p class="card-text">Barton vanity itself do in it. Preferd to men it listening.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card shadow-sm p-3 mb-5 rounded grow-animation" style="width: 18rem;">
-          <img src="img/4.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="h3">Customization</p>
-            <p class="card-text">We deliver outsourced
-              aviation services for
-              military customers.</p>
 
+  <!-- Destinations Section -->
+  <div class="destinations-section text-center mt-5">
+    <h5 class="text-body-secondary">Top Selling</h5>
+    <h1>Top Destinations</h1>
+    <div class="row justify-content-center mt-4 g-4">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card1 shadow grow-animation">
+          <img src="/img/Rectangle 14.png" class="card-img-top1" alt="Rome">
+          <div class="card-body1">
+            <span>Rome, Italy</span>
+            <span>$5,42k</span>
           </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">📌 10 Days Trip</li>
+          </ul>
         </div>
-    </div>
-    <!-- /* Destination Section */ -->
-    <div class="services-header2 mt-5 text-center">
-      <h5 class="text-body-secondary">Top Selling</h5>
-      <h1>Top Destinations</h1>
-    </div>
-    <div class="card1 shadow-sm p-3 mb-5 rounded-3 grow-animation poppins-medium mt-5" style="width: 18rem;">
-      <img src="img/Rectangle 14.png" class="card-img-top1" alt="...">
-      <div class="card-body1 ">
-        <p>Rome, Italty</p>
-        <p>$5,42k</p>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">📌 10 Days Trip</li>
-      </ul>
-    </div>
-    <div class="card1 shadow-sm p-3 mb-5 rounded-3 grow-animation poppins-medium mt-5" style="width: 18rem;">
-      <img src="img/Rectangle 16.png" class="card-img-top1" alt="...">
-      <div class="card-body1 ">
-        <p>Rome, Italty</p>
-        <p>$5,42k</p>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card1 shadow grow-animation">
+          <img src="/img/Rectangle 16.png" class="card-img-top1" alt="Paris">
+          <div class="card-body1">
+            <span>Paris, France</span>
+            <span>$4,80k</span>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">📌 8 Days Trip</li>
+          </ul>
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">📌 10 Days Trip</li>
-      </ul>
-    </div>
-    <div class="card1 shadow-sm p-3 mb-5 rounded-3 grow-animation poppins-medium mt-5" style="width: 18rem;">
-      <img src="img/Rectangle_15.png" class="card-img-top1" alt="...">
-      <div class="card-body1 ">
-        <p>Rome, Italty</p>
-        <p>$5,42k</p>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card1 shadow grow-animation">
+          <img src="/img/Rectangle_15.png" class="card-img-top1" alt="London">
+          <div class="card-body1">
+            <span>London, UK</span>
+            <span>$5,10k</span>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">📌 9 Days Trip</li>
+          </ul>
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">📌 10 Days Trip</li>
-      </ul>
     </div>
+  </div>
 
-  <!-- Newsletter Section -->
-  <section class="container py-5 text-center bg-light rounded">
-    <h4 class="fw-bold">Subscribe to get information, latest news and other interesting offers about Jadoo</h4>
-    <form class="d-flex justify-content-center mt-4">
-      <input type="email" class="form-control w-25 me-2" placeholder="Your email">
+  <!-- Newsletter -->
+  <section class="newsletter text-center">
+    <h4>Subscribe to get information, latest news and other interesting offers about Jadoo</h4>
+    <form class="d-flex justify-content-center mt-4 flex-wrap">
+      <input type="email" class="form-control w-100 w-md-25 me-md-2 mb-2 mb-md-0" placeholder="Your email">
       <button class="btn btn-danger px-4">Subscribe</button>
     </form>
   </section>
 
   <!-- Footer -->
   <footer class="container py-5">
-    <div class="row">
-      <div class="col-md-3">
+    <div class="row text-center text-md-start">
+      <div class="col-md-3 mb-4">
         <h5 class="fw-bold">Jadoo.</h5>
         <p>Book your trip in minutes, get full control for much longer.</p>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 mb-4">
         <h6 class="fw-bold">Company</h6>
-        <ul class="list-unstyled">
+        <ul>
           <li>About</li>
           <li>Careers</li>
           <li>Mobile</li>
         </ul>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 mb-4">
         <h6 class="fw-bold">Contact</h6>
-        <ul class="list-unstyled">
+        <ul>
           <li>Help/FAQ</li>
           <li>Press</li>
           <li>Affiliates</li>
         </ul>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 mb-4">
         <h6 class="fw-bold">More</h6>
-        <ul class="list-unstyled">
-          <li>Airlinefees</li>
+        <ul>
+          <li>Airline fees</li>
           <li>Airline</li>
           <li>Low fare tips</li>
         </ul>
@@ -191,10 +274,11 @@
     <div class="text-center mt-4">
       <p>All rights reserved @jadoo.co</p>
     </div>
-  </footer
-  </div>
+  </footer>
 
+</div>
 
-  <script src="js/bootstrap.bundle.js"></script>
+<!-- Bootstrap Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
